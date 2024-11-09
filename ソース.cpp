@@ -145,7 +145,16 @@ struct NetwarkSkill_Moc {
 	Footer F;
 
 };
+struct HumanSkil_Moc {
+	Vector<Clojuer> Clojuers;
+	//type Ret = intmax_t;
+	typedef intmax_t Ret;
+	//type R = Ret;
 
+	R(*SetUpClojuer)(Clojuer&) = NULL;
+	R(*DestructClojuer)(Clojuer&) = NULL;
+	R(*Extcution)(Clojuer&) = NULL;
+};
 
 struct ObjectInfo {
 	char Name[32] = {0,};
@@ -175,4 +184,8 @@ struct ObjectInfo {
 	typedef NetwarkSkill_Moc NW;
 	//type NetWark = NetwarkSkill_Moc;
 	NetWork HumanNetWarkDevice;
+	//type S = HumanSkil_Moc;
+	typedef HumanSkil_Moc S;
+	//type Skil = S;
+	Skill Sense;
 };
