@@ -106,16 +106,73 @@ struct TranceMog_Moc {
 	Size2D<size_t> TipSize;
 };
 
+struct GakuTai_Moc {
+	//type Word = short;
+	typedef short Word;
+	typedef int DWord;
+	Vector<Word> Data;
+	Word Channel = 2;
+	Word Bit = sizeof(Word)/CHAR_BIT;
+	DWord RealizerBitCount = 48000;
+	DWord BufferTime;
+};
+
+struct NetwarkSkill_Moc {
+	//type P = NULL;
+	typedef void* P;
+	//type Protocol = P;
+	Protocol P;
+
+	void* Tunnel=NULL;
+
+	//type H = NULL;
+	typedef void* H;
+	//type Header = H;
+	//type F = NULL;
+	typedef void* F;
+	//type Footer = F;
+
+	//type C = NULL;
+	typedef void* C;
+	//type Chaunk = C;
+	 
+	//type W = NULL;
+	typedef unsigned char W;
+	//type Word = W;
+	Header H;
+	Chaunk C;
+	Vector<Word> Data;
+	Footer F;
+
+};
+
+
 struct ObjectInfo {
 	char Name[32] = {0,};
-	//type T = NULL;
-	typedef void* T:
+	//type Type = NULL;
+	typedef void* Type:
+	//type T = Type;
 	T Info;
-	//type Metric = double;
-	typedef double Metric;
+	//type W=NULL;
+	typedef unsigned char W;
+	//type Word = W;
+	Word Strage;
+	Word Parmittion;
+	Word Memo;
+	//type M = double;
+	typedef double M;
+	//type Metric = M;
 	Point3D<Metric> Position;
 	Size3D<double> Theta;
-	//type TranceMog = TranceMog_Moc;
-	typedef TranceMog_Moc TranceMog;
+	//type TM = TranceMog_Moc;
+	typedef TranceMog_Moc TM;
+	//type TranceMog = TM;
 	TranceMog Visual;
+	//type GakuTai = GakTai_Moc;//Šy‘à
+	typedef GakuTai_Moc GakuTai;
+	GakuTai Sound;
+	//type NW = NetwarkSkill_Moc;
+	typedef NetwarkSkill_Moc NW;
+	//type NetWark = NetwarkSkill_Moc;
+	NetWork HumanNetWarkDevice;
 };
