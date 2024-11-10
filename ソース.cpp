@@ -156,6 +156,18 @@ struct HumanSkil_Moc {
 	R(*Extcution)(Clojuer&) = NULL;
 };
 
+struct AI_Moc {
+	//type W = NULL;
+	typedef unsigned char W;
+	//type Word = W;
+
+	Word Strage;
+	Word Memo;
+	Word AI;
+	Clojuer C;
+};
+
+
 struct ObjectInfo {
 	char Name[32] = {0,};
 	//type Type = NULL;
@@ -173,6 +185,10 @@ struct ObjectInfo {
 	//type Metric = M;
 	Point3D<Metric> Position;
 	Size3D<double> Theta;
+	//type AI = NULL;
+	typedef AI_Moc* AI;
+	//type ArtificalInteriges=AI_Moc;
+	ArtificalInteriges AI;
 	//type TM = TranceMog_Moc;
 	typedef TranceMog_Moc TM;
 	//type TranceMog = TM;
